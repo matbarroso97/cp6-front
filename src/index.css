@@ -1,0 +1,251 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+  
+  html {
+    scroll-padding-top: 80px;
+  }
+  
+  body {
+    line-height: 1.6;
+    overflow-x: hidden;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  /* Dark Mode (padrão) */
+  body.dark-mode {
+    background: #0b0b0c;
+    color: #d7d7db;
+  }
+
+  /* Light Mode */
+  body.light-mode {
+    background: #ffffff;
+    color: #1a1a1a;
+  }
+
+  body.light-mode * {
+    color: #1a1a1a;
+  }
+
+  body.light-mode h1,
+  body.light-mode h2,
+  body.light-mode h3,
+  body.light-mode h4,
+  body.light-mode h5,
+  body.light-mode h6,
+  body.light-mode strong {
+    color: #000000;
+  }
+
+  /* Backgrounds claros */
+  body.light-mode .bg-gray-950,
+  body.light-mode .bg-gray-900,
+  body.light-mode .bg-gray-800,
+  body.light-mode header,
+  body.light-mode section {
+    background: #ffffff !important;
+  }
+
+  /* Bordas claras */
+  body.light-mode .border-gray-900,
+  body.light-mode .border-gray-800,
+  body.light-mode .border-gray-700 {
+    border-color: #e0e0e0 !important;
+  }
+
+  /* Textos escuros */
+  body.light-mode .text-gray-400,
+  body.light-mode .text-gray-300,
+  body.light-mode .text-gray-200,
+  body.light-mode .text-white {
+    color: #000000 !important;
+  }
+
+  /* Botões pretos com fonte branca */
+  body.light-mode #home button,
+  body.light-mode #home a,
+  body.light-mode #projetos button,
+  body.light-mode #projetos a {
+    background: #000000 !important;
+    color: #ffffff !important;
+    border-color: #000000 !important;
+  }
+
+  body.light-mode #home button *,
+  body.light-mode #home a *,
+  body.light-mode #projetos button *,
+  body.light-mode #projetos a * {
+    color: #ffffff !important;
+  }
+
+  /* Botão de enviar mensagem - vermelho */
+  body.light-mode #contato form button,
+  body.light-mode #contato button[type="submit"],
+  body.light-mode button.bg-red-600 {
+    background: #e60000 !important;
+    color: #ffffff !important;
+    border-color: #e60000 !important;
+  }
+
+  body.light-mode #contato form button *,
+  body.light-mode #contato button[type="submit"] *,
+  body.light-mode button.bg-red-600 * {
+    color: #ffffff !important;
+  }
+
+  /* Containers de competências - fundo preto com fonte branca */
+  body.light-mode #competencias > div > div > div {
+    background: #000000 !important;
+    border-color: #333333 !important;
+  }
+
+  body.light-mode #competencias > div > div > div * {
+    color: #ffffff !important;
+  }
+
+  /* Cards de projetos - fundo preto com fonte branca */
+  body.light-mode #projetos article {
+    background: #000000 !important;
+    border-color: #333333 !important;
+  }
+
+  body.light-mode #projetos article * {
+    color: #ffffff !important;
+  }
+
+  /* Cards de contato - fundo preto com fonte branca */
+  body.light-mode #contato > div > div > div > div {
+    background: #000000 !important;
+    border-color: #333333 !important;
+  }
+
+  body.light-mode #contato > div > div > div > div * {
+    color: #ffffff !important;
+  }
+
+  /* Inputs e textarea - fundo branco com texto preto */
+  body.light-mode input,
+  body.light-mode textarea {
+    background: #ffffff !important;
+    color: #000000 !important;
+    border-color: #e0e0e0 !important;
+  }
+
+  body.light-mode input::placeholder,
+  body.light-mode textarea::placeholder {
+    color: #666666 !important;
+  }
+
+  /* Menu */
+  body.light-mode header {
+    background: #ffffff !important;
+    border-bottom: 1px solid #e0e0e0 !important;
+  }
+
+  body.light-mode header button,
+  body.light-mode #site-menu button {
+    background: transparent !important;
+    color: #000000 !important;
+  }
+
+  body.light-mode header button *,
+  body.light-mode #site-menu button * {
+    color: #000000 !important;
+  }
+
+  body.light-mode #site-menu {
+    background: #ffffff !important;
+    border-color: #e0e0e0 !important;
+  }
+
+  /* Links de contato - fundo preto com fonte branca */
+  body.light-mode #contato a[href^="mailto"],
+  body.light-mode #contato a[href^="https://www.linkedin"],
+  body.light-mode #contato a[href^="https://wa.me"] {
+    background: #000000 !important;
+    border-color: #333333 !important;
+  }
+
+  body.light-mode #contato a[href^="mailto"] *,
+  body.light-mode #contato a[href^="https://www.linkedin"] *,
+  body.light-mode #contato a[href^="https://wa.me"] * {
+    color: #ffffff !important;
+  }
+}
+
+/* Tech Background */
+.bg-tech {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(135deg, rgba(8, 8, 12, .95), rgba(12, 8, 15, .98));
+  overflow: hidden;
+  transition: background 0.3s ease;
+}
+
+body.light-mode .bg-tech {
+  background: linear-gradient(135deg, rgba(248, 248, 248, .95), rgba(252, 252, 252, .98));
+}
+
+.bg-tech::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(90deg, transparent 0%, rgba(230, 0, 0, .03) 50%, transparent 100%),
+    linear-gradient(0deg, transparent 0%, rgba(230, 0, 0, .02) 50%, transparent 100%);
+  background-size: 100px 100px;
+  animation: circuit-pulse 8s ease-in-out infinite;
+}
+
+.bg-tech::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: 
+    radial-gradient(circle at 20% 20%, rgba(230, 0, 0, .08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(230, 0, 0, .06) 0%, transparent 50%),
+    radial-gradient(circle at 40% 60%, rgba(230, 0, 0, .04) 0%, transparent 50%);
+  animation: glow-pulse 6s ease-in-out infinite alternate;
+}
+
+@keyframes circuit-pulse {
+  0%, 100% {
+    opacity: .3;
+    transform: translateX(0) translateY(0);
+  }
+  25% {
+    opacity: .5;
+    transform: translateX(2px) translateY(-1px);
+  }
+  50% {
+    opacity: .4;
+    transform: translateX(-1px) translateY(2px);
+  }
+  75% {
+    opacity: .6;
+    transform: translateX(1px) translateY(-2px);
+  }
+}
+
+@keyframes glow-pulse {
+  from {
+    opacity: .4;
+    transform: scale(1);
+  }
+  to {
+    opacity: .7;
+    transform: scale(1.05);
+  }
+}
+
+
