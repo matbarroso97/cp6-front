@@ -113,4 +113,4 @@ Os arquivos otimizados serão gerados na pasta `build/`.
 
 O projeto está hospedado na **Vercel**:
 
-🔗 [Link do Site]([https://cp6-front-mu.vercel.app/])
+🔗 [Link do Site](https://cp6-front-mu.vercel.app/)
